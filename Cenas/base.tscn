@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvc0lqutuni77"]
+[gd_scene format=3 uid="uid://bvc0lqutuni77"]
 
 [ext_resource type="Script" uid="uid://cj1erslt1fd1a" path="res://Scripts/base.gd" id="1_0nkuk"]
 [ext_resource type="PackedScene" uid="uid://lqx1cgaj8g4y" path="res://Cenas/jogador.tscn" id="1_gcmf8"]
@@ -6,6 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://cgd7fueumh4yx" path="res://Artwork/Spritesheets/spritesheet-tiles-default.png" id="3_udb7x"]
 [ext_resource type="PackedScene" uid="uid://dhfjwq4n6h5l6" path="res://Cenas/Mola/mola.tscn" id="4_0usdl"]
 [ext_resource type="PackedScene" uid="uid://ya27sr3mwuve" path="res://Cenas/Bandeira/bandeira.tscn" id="5_hfgwh"]
+[ext_resource type="PackedScene" uid="uid://cc2jjwwx8y43i" path="res://Cenas/Escada/escada.tscn" id="7_grhgx"]
+[ext_resource type="PackedScene" uid="uid://c7it4tph6ga85" path="res://Cenas/Chave/chave.tscn" id="8_v8voi"]
+[ext_resource type="PackedScene" uid="uid://beuawe2x0ify2" path="res://Cenas/Cofre/cofre.tscn" id="9_tggrx"]
+[ext_resource type="PackedScene" uid="uid://ca0285je46ht3" path="res://Cenas/Spikes/spikes.tscn" id="10_s0sga"]
+[ext_resource type="PackedScene" uid="uid://b6l7v44l1silq" path="res://Cenas/Peso/peso.tscn" id="11_y45cy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rxr7y"]
 texture = ExtResource("2_rxr7y")
@@ -732,36 +737,66 @@ tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/6 = SubResource("TileSetAtlasSource_v8voi")
 
-[node name="Base" type="Node2D"]
+[node name="Base" type="Node2D" unique_id=1958023067]
 script = ExtResource("1_0nkuk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1866944525]
 offset_right = 1170.0
 offset_bottom = 649.0
 color = Color(0, 0.563355, 0.707999, 1)
 
-[node name="TileMap3" type="TileMap" parent="."]
+[node name="TileMap3" type="TileMap" parent="." unique_id=1431020305]
 tile_set = SubResource("TileSet_grhgx")
 format = 2
 layer_0/tile_data = PackedInt32Array(0, 4, 0, 1, 4, 0, 2, 4, 0, 3, 4, 0, 4, 4, 0, 5, 4, 0, 6, 4, 0, 7, 4, 0, 8, 4, 0, 9, 4, 0, 10, 4, 0, 11, 4, 0, 12, 4, 0, 13, 4, 0, 14, 4, 0, 15, 4, 0, 16, 4, 0, 17, 4, 0, 65553, 4, 0, 65552, 4, 0, 65551, 4, 0, 65550, 4, 0, 65549, 4, 0, 65548, 4, 0, 65547, 4, 0, 65546, 4, 0, 65545, 4, 0, 65544, 4, 0, 65543, 4, 0, 65542, 4, 0, 65541, 4, 0, 65540, 4, 0, 65539, 4, 0, 65538, 4, 0, 65537, 4, 0, 65536, 4, 0, 131072, 4, 0, 196608, 4, 0, 196609, 4, 0, 131073, 4, 0, 131074, 4, 0, 131075, 4, 0, 131076, 4, 0, 131077, 4, 0, 131078, 4, 0, 131079, 4, 0, 131080, 4, 0, 131081, 4, 0, 131082, 4, 0, 131083, 4, 0, 131084, 4, 0, 131085, 4, 0, 131086, 4, 0, 131087, 4, 0, 131088, 4, 0, 131089, 4, 0, 196625, 4, 0, 196624, 4, 0, 196623, 4, 0, 196622, 4, 0, 196621, 4, 0, 196620, 4, 0, 196619, 4, 0, 196618, 4, 0, 196617, 4, 0, 262153, 4, 0, 262152, 4, 0, 262151, 4, 0, 262150, 4, 0, 262149, 4, 0, 262148, 4, 0, 262147, 4, 0, 196611, 4, 0, 196612, 4, 0, 196613, 4, 0, 196614, 4, 0, 196615, 4, 0, 196616, 4, 0, 262155, 4, 0, 262154, 4, 0, 327687, 4, 0, 393223, 4, 0, 458759, 4, 0, 393224, 4, 0, 458760, 4, 0, 524296, 4, 0, 327688, 4, 0, 327689, 4, 0, 327690, 4, 0, 393226, 4, 0, 458762, 4, 0, 393225, 4, 0, 458761, 4, 0, 524297, 4, 0, 327691, 4, 0, 393227, 4, 0, 458763, 4, 0, 262156, 4, 0, 327692, 4, 0, 393228, 4, 0, 458764, 4, 0, 262157, 4, 0, 327693, 4, 0, 393229, 4, 0, 458765, 4, 0, 262158, 4, 0, 327694, 4, 0, 393230, 4, 0, 458766, 4, 0, 262160, 4, 0, 262161, 4, 0, 262159, 4, 0, 393231, 4, 0, 327695, 4, 0, 458767, 4, 0, 327696, 4, 0, 393232, 4, 0, 458768, 4, 0, 327697, 4, 0, 393233, 4, 0, 458769, 4, 0, 524302, 4, 0, 524301, 4, 0, 524300, 4, 0, 524299, 4, 0, 524298, 4, 0, 524295, 4, 0, 524294, 4, 0, 524303, 4, 0, 524304, 4, 0, 524305, 4, 0, 524293, 4, 0, 524292, 4, 0, 524291, 4, 0, 524290, 4, 0, 524289, 4, 0, 524288, 4, 0, 458754, 4, 0, 458755, 4, 0, 458756, 4, 0, 458757, 4, 0, 458758, 4, 0, 458753, 4, 0, 393217, 4, 0, 393218, 4, 0, 393219, 4, 0, 327683, 4, 0, 327684, 4, 0, 327685, 4, 0, 327686, 4, 0, 393222, 4, 0, 327682, 4, 0, 327681, 4, 0, 327680, 4, 0, 262146, 4, 0, 262145, 4, 0, 262144, 4, 0)
 
-[node name="TileMap2" type="TileMap" parent="."]
+[node name="TileMap2" type="TileMap" parent="." unique_id=277830294]
 tile_set = SubResource("TileSet_rxr7y")
 format = 2
 layer_0/tile_data = PackedInt32Array(327696, 720902, 9, 131072, 786438, 9, 131073, 720902, 9, 131074, 851974, 9, 196610, 655366, 9, 262146, 655366, 9, 327682, 655366, 9, 393218, 655366, 9, 458754, 655366, 9, 196608, 589830, 9, 262144, 589830, 9, 327680, 589830, 9, 393216, 589830, 9, 458752, 589830, 9, 458753, 524294, 9, 589824, 589830, 9, 589825, 524294, 9, 393217, 524294, 9, 327681, 524294, 9, 262145, 524294, 9, 196609, 524294, 9, 327683, 786438, 9, 393219, 589830, 9, 458755, 589830, 9, 327686, 720902, 9, 393222, 524294, 9, 458758, 524294, 9, 589830, 524294, 9, 327687, 851974, 9, 393223, 655366, 9, 458759, 655366, 9, 589831, 655366, 9, 393232, 524294, 9, 458768, 524294, 9, 524304, 524294, 9, 589840, 524294, 9, 327697, 851974, 9, 393233, 655366, 9, 458769, 655366, 9, 524305, 655366, 9, 589841, 655366, 9, 327684, 720902, 9, 393220, 524294, 9, 458756, 524294, 9, 589828, 524294, 9, 327685, 720902, 9, 393221, 524294, 9, 458757, 524294, 9, 589829, 524294, 9, 327695, 786438, 9, 393231, 589830, 9, 458767, 589830, 9, 524303, 589830, 9, 589839, 589830, 9, 524288, 589830, 9, 524289, 524294, 9, 524290, 655366, 9, 524291, 589830, 9, 524292, 524294, 9, 524293, 524294, 9, 524294, 524294, 9, 524295, 655366, 9, 589827, 589830, 9, 589826, 655366, 9)
 
-[node name="Jogador" parent="." instance=ExtResource("1_gcmf8")]
+[node name="Jogador" parent="." unique_id=1529192333 instance=ExtResource("1_gcmf8")]
 position = Vector2(151, 462)
 
-[node name="TileMap4" type="TileMap" parent="."]
+[node name="TileMap4" type="TileMap" parent="." unique_id=705124175]
 tile_set = SubResource("TileSet_hfgwh")
 format = 2
 layer_0/tile_data = PackedInt32Array(524305, 65542, 8, 524304, 65542, 8, 524303, 65542, 8, 524302, 65542, 8, 524301, 65542, 8, 524300, 65542, 8, 524299, 65542, 8, 524298, 65542, 8, 524297, 65542, 8, 524296, 65542, 8, 524295, 65542, 8, 524294, 65542, 8, 524293, 65542, 8, 524292, 65542, 8, 524291, 65542, 8, 524290, 65542, 8, 524289, 65542, 8, 524288, 131078, 8, 458752, 786438, 5, 393216, 851974, 5, 393227, 786438, 3, 458763, 655366, 3, 458762, 589830, 0, 458764, 589830, 0, 393228, 589830, 0, 458768, 524294, 0, 393232, 524294, 0, 327696, 524294, 0, 589841, 6, 11, 589840, 6, 11, 589839, 6, 11, 589838, 6, 11, 589837, 6, 11, 589836, 6, 11, 589835, 6, 11, 589834, 6, 11, 589833, 6, 11, 589832, 6, 11, 589831, 6, 11, 589830, 6, 11, 589829, 6, 11, 589828, 6, 11, 589827, 6, 11, 589826, 6, 11, 589825, 6, 11, 589824, 65542, 11)
 
-[node name="Mola" parent="." instance=ExtResource("4_0usdl")]
+[node name="Mola" parent="." unique_id=1790552055 instance=ExtResource("4_0usdl")]
 position = Vector2(606, 480)
 
-[node name="Bandeira" parent="." instance=ExtResource("5_hfgwh")]
+[node name="Bandeira" parent="." unique_id=2127321026 instance=ExtResource("5_hfgwh")]
 position = Vector2(804, 352)
+
+[node name="Mola2" parent="." unique_id=910350053 instance=ExtResource("7_grhgx")]
+position = Vector2(454, 474)
+
+[node name="Mola3" parent="." unique_id=1920661285 instance=ExtResource("7_grhgx")]
+position = Vector2(454, 412)
+
+[node name="Mola4" parent="." unique_id=1632917362 instance=ExtResource("7_grhgx")]
+position = Vector2(454, 352)
+
+[node name="Cofre" parent="." unique_id=347821529 instance=ExtResource("9_tggrx")]
+position = Vector2(542, 304)
+
+[node name="Cofre2" parent="." unique_id=833701806 instance=ExtResource("9_tggrx")]
+position = Vector2(708, 272)
+cor_cofre = 3
+
+[node name="Chave" parent="." unique_id=1581357907 instance=ExtResource("8_v8voi")]
+position = Vector2(243, 385)
+
+[node name="Chave2" parent="." unique_id=1450354723 instance=ExtResource("8_v8voi")]
+position = Vector2(364, 320)
+cor_chave = 3
+
+[node name="Spikes" parent="." unique_id=1726554218 instance=ExtResource("10_s0sga")]
+position = Vector2(542, 240)
+
+[node name="Peso" parent="." unique_id=742486931 instance=ExtResource("11_y45cy")]
+position = Vector2(150, 139)
+tempo_queda = 0.4
 
 [connection signal="apanhada" from="Bandeira" to="." method="_on_bandeira_apanhada"]

@@ -10,6 +10,11 @@
 [ext_resource type="Script" uid="uid://dujva7tj0m4ga" path="res://Scripts/reset.gd" id="7_2gn5e"]
 [ext_resource type="PackedScene" uid="uid://3hla61ddkgux" path="res://Cenas/Plataforma/plataforma.tscn" id="7_llgc5"]
 [ext_resource type="PackedScene" uid="uid://dhfjwq4n6h5l6" path="res://Cenas/Mola/mola.tscn" id="9_bidbw"]
+[ext_resource type="PackedScene" uid="uid://ca0285je46ht3" path="res://Cenas/Spikes/spikes.tscn" id="11_2a50i"]
+[ext_resource type="PackedScene" uid="uid://c7it4tph6ga85" path="res://Cenas/Chave/chave.tscn" id="12_3xqje"]
+[ext_resource type="PackedScene" uid="uid://beuawe2x0ify2" path="res://Cenas/Cofre/cofre.tscn" id="13_ij8qk"]
+[ext_resource type="PackedScene" uid="uid://b6l7v44l1silq" path="res://Cenas/Peso/peso.tscn" id="14_hk7g4"]
+[ext_resource type="PackedScene" uid="uid://cm56g7bbwxdas" path="res://Cenas/Tocha/tocha.tscn" id="15_srkex"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2a50i"]
 texture = ExtResource("2_754lk")
@@ -1114,6 +1119,21 @@ debug_color = Color(0.995611, 0, 0.202159, 0.42)
 [node name="Mola" parent="." unique_id=1813161864 instance=ExtResource("9_bidbw")]
 position = Vector2(264, 349)
 Force = 2.0
+
+[node name="Spikes" parent="." unique_id=1726554218 instance=ExtResource("11_2a50i")]
+position = Vector2(888, 198)
+
+[node name="Chave" parent="." unique_id=1581357907 instance=ExtResource("12_3xqje")]
+position = Vector2(888, 304)
+
+[node name="Cofre" parent="." unique_id=347821529 instance=ExtResource("13_ij8qk")]
+position = Vector2(888, 381)
+
+[node name="Peso" parent="." unique_id=742486931 instance=ExtResource("14_hk7g4")]
+position = Vector2(264, 74)
+
+[node name="Tocha" parent="." unique_id=1505716423 instance=ExtResource("15_srkex")]
+position = Vector2(432, 230)
 
 [connection signal="apanhada" from="Bandeira" to="." method="_on_bandeira_apanhada"]
 [connection signal="body_entered" from="Reset" to="Reset" method="_on_body_entered"]

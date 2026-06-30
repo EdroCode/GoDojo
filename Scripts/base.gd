@@ -10,7 +10,7 @@ func _ready() -> void:
 	# O teu código começa AQUI depois do sinal de dois pontos (:)
 	# Exemplo:
 	await jogador.esperar(2)
-	await jogador.saltar_direita(3)
+	await jogador.mover_direita(3)
 
 
 func _on_bandeira_apanhada() -> void:

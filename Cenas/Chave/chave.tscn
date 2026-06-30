@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c7it4tph6ga85"]
+
+[ext_resource type="Script" uid="uid://cbwxqd8tk4ij3" path="res://Cenas/Chave/chave.gd" id="1_lpfdx"]
+[ext_resource type="Texture2D" uid="uid://bkip1x2wdg7ao" path="res://Artwork/Sprites/Tiles/Default/key_yellow.png" id="1_vu8av"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vu8av"]
+radius = 31.06445
+
+[node name="Chave" type="Area2D" unique_id=1581357907]
+script = ExtResource("1_lpfdx")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1326791633]
+texture = ExtResource("1_vu8av")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=491405057]
+shape = SubResource("CircleShape2D_vu8av")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,27 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bckbxen3a4wxn"]
+[gd_scene format=3 uid="uid://bckbxen3a4wxn"]
 
 [ext_resource type="Script" uid="uid://dop8wjspvrhyc" path="res://Cenas/Gear/gear.gd" id="1_wg2ot"]
-[ext_resource type="Texture2D" uid="uid://c38ygo7qty8wr" path="res://Artwork/Sprites/Tiles/Default/saw.png" id="2_wg2ot"]
+[ext_resource type="Texture2D" uid="uid://dwud0hoiyqkgb" path="res://Artwork/Sprites/Enemies/Default/saw_a.png" id="2_wg2ot"]
+[ext_resource type="Texture2D" uid="uid://bc76ttugndbd5" path="res://Artwork/Sprites/Enemies/Default/saw_rest.png" id="3_mgwi8"]
+[ext_resource type="Texture2D" uid="uid://btgyv36dgdfwe" path="res://Artwork/Sprites/Enemies/Default/saw_b.png" id="3_qv4m8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wg2ot"]
 radius = 35.0143
-
-[sub_resource type="Animation" id="Animation_wg2ot"]
-resource_name = "new_animation"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BlockSpikes:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.99),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
 
 [sub_resource type="Animation" id="Animation_qv4m8"]
 length = 0.001
@@ -37,26 +22,81 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlockSpikes:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wg2ot")]
+}
+
+[sub_resource type="Animation" id="Animation_mgwi8"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlockSpikes:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_mgwi8")]
+}
+
+[sub_resource type="Animation" id="Animation_wg2ot"]
+resource_name = "spin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("BlockSpikes:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlockSpikes:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002, 0.29996204, 0.40000004, 0.50000006, 0.6, 0.6999621, 0.8000001, 0.9000001, 1.0000001, 1.0999621, 1.2, 1.3000002, 1.4000001, 1.4999621, 1.6000001, 1.7000002, 1.8000002, 1.8999622, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot"), ExtResource("3_qv4m8"), ExtResource("2_wg2ot")]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qv4m8"]
 _data = {
 &"RESET": SubResource("Animation_qv4m8"),
-&"new_animation": SubResource("Animation_wg2ot")
+&"idle": SubResource("Animation_mgwi8"),
+&"spin": SubResource("Animation_wg2ot")
 }
 
-[node name="Gear" type="Area2D"]
+[node name="Saw" type="Area2D" unique_id=187751282]
 script = ExtResource("1_wg2ot")
 
-[node name="BlockSpikes" type="Sprite2D" parent="."]
+[node name="BlockSpikes" type="Sprite2D" parent="." unique_id=273077255]
 texture = ExtResource("2_wg2ot")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=431943680]
 shape = SubResource("CircleShape2D_wg2ot")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_qv4m8")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=890189045]
+libraries/ = SubResource("AnimationLibrary_qv4m8")
+autoplay = &"idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

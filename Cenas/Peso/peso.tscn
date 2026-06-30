@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b6l7v44l1silq"]
+
+[ext_resource type="Script" uid="uid://bc7pe3fujuxep" path="res://Cenas/Peso/peso.gd" id="1_vhvyg"]
+[ext_resource type="Texture2D" uid="uid://b1exufq3gutkn" path="res://Artwork/Sprites/Tiles/Default/weight.png" id="1_wqhf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhvyg"]
+size = Vector2(41, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8dbec"]
+size = Vector2(56, 50.5)
+
+[node name="Peso" type="CharacterBody2D" unique_id=742486931]
+script = ExtResource("1_vhvyg")
+
+[node name="Weight" type="Sprite2D" parent="." unique_id=759633946]
+texture = ExtResource("1_wqhf5")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1892086333]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1478780703]
+position = Vector2(-0.5, 28)
+shape = SubResource("RectangleShape2D_vhvyg")
+debug_color = Color(0.99840707, 0.03659304, 5.7756904e-07, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1005080679]
+position = Vector2(0, 4.75)
+shape = SubResource("RectangleShape2D_8dbec")
+
+[node name="Timer" type="Timer" parent="." unique_id=1797024644]
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

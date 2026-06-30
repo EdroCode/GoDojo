@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cc2jjwwx8y43i"]
+
+[ext_resource type="Script" uid="uid://bsrca4igqhf3" path="res://Cenas/Escada/escada.gd" id="1_7qdp3"]
+[ext_resource type="Texture2D" uid="uid://8x07wvr2jnxf" path="res://Artwork/Sprites/Tiles/Default/ladder_middle.png" id="2_7qdp3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7fme1"]
+radius = 32.0
+height = 76.0
+
+[node name="Escada" type="Area2D" unique_id=910350053]
+script = ExtResource("1_7qdp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=545457857]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_7fme1")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1361025649]
+position = Vector2(0, 1)
+texture = ExtResource("2_7qdp3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

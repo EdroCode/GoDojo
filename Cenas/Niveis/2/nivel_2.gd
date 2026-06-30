@@ -9,7 +9,7 @@ extends Node
 func _ready() -> void:
 	# O teu código começa AQUI depois do sinal de dois pontos (:)
 	# Exemplo:
-	await jogador.dizer("Hora do Nivel 2!", 1)
+	await jogador.dizer("Hora asdasdasdsdo Nivel 2!", 1)
 
 
 # Não tocar 

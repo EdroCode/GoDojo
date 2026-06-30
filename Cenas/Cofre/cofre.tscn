@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://beuawe2x0ify2"]
+
+[ext_resource type="Texture2D" uid="uid://2dc5oyrf7vg0" path="res://Artwork/Sprites/Tiles/Default/lock_yellow.png" id="1_tj02t"]
+[ext_resource type="Script" uid="uid://bc40u2gy6swu8" path="res://Cenas/Cofre/cofre.gd" id="1_wqdpg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqdpg"]
+size = Vector2(60, 62)
+
+[node name="Cofre" type="StaticBody2D" unique_id=347821529 groups=["Cofre"]]
+script = ExtResource("1_wqdpg")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1239691071]
+texture = ExtResource("1_tj02t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2095275042]
+shape = SubResource("RectangleShape2D_wqdpg")
