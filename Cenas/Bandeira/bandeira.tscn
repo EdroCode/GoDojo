@@ -1,0 +1,84 @@
+[gd_scene load_steps=13 format=3 uid="uid://ya27sr3mwuve"]
+
+[ext_resource type="Script" uid="uid://b8jmflbncr7ue" path="res://Cenas/Bandeira/bandeira.gd" id="1_lj3qn"]
+[ext_resource type="Texture2D" uid="uid://dkyi226b11hx3" path="res://Artwork/Sprites/Tiles/Default/flag_yellow_a.png" id="2_axchn"]
+[ext_resource type="Texture2D" uid="uid://ds74cms8mmpwj" path="res://Artwork/Sprites/Tiles/Default/flag_yellow_b.png" id="3_xas5y"]
+[ext_resource type="Texture2D" uid="uid://bm5bw0dlnberp" path="res://Artwork/Sprites/Tiles/Default/flag_off.png" id="3_xjj4u"]
+[ext_resource type="Texture2D" uid="uid://bm3snkaorhgjs" path="res://Artwork/Sprites/Tiles/Default/flag_blue_a.png" id="4_u5mkm"]
+[ext_resource type="Texture2D" uid="uid://tep0wjtnx1eo" path="res://Artwork/Sprites/Tiles/Default/flag_green_a.png" id="5_xas5y"]
+[ext_resource type="Texture2D" uid="uid://b0d4cft3owoot" path="res://Artwork/Sprites/Tiles/Default/flag_red_a.png" id="6_3a3wc"]
+[ext_resource type="Texture2D" uid="uid://bqlsatag0bd7" path="res://Artwork/Sprites/Tiles/Default/flag_blue_b.png" id="6_34vj1"]
+[ext_resource type="Texture2D" uid="uid://oysryqju1ucx" path="res://Artwork/Sprites/Tiles/Default/flag_green_b.png" id="8_kof1g"]
+[ext_resource type="Texture2D" uid="uid://dbg2cf00p0ott" path="res://Artwork/Sprites/Tiles/Default/flag_red_b.png" id="10_aidgy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8hhk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_axchn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xas5y")
+}],
+"loop": true,
+"name": &"Amarelo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xjj4u")
+}],
+"loop": true,
+"name": &"Apanhada",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u5mkm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_34vj1")
+}],
+"loop": true,
+"name": &"Azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xas5y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kof1g")
+}],
+"loop": true,
+"name": &"Verde",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_3a3wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_aidgy")
+}],
+"loop": true,
+"name": &"Vermelho",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xas5y"]
+radius = 45.0999
+
+[node name="Bandeira" type="Area2D"]
+script = ExtResource("1_lj3qn")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_t8hhk")
+animation = &"Amarelo"
+autoplay = "Vermelho"
+frame_progress = 0.99569
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xas5y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,121 @@
+[gd_scene load_steps=10 format=3 uid="uid://lqx1cgaj8g4y"]
+
+[ext_resource type="Texture2D" uid="uid://b1c4osgemr26s" path="res://Artwork/Spritesheets/spritesheet-characters-double.png" id="1_ivkba"]
+[ext_resource type="Script" uid="uid://bqodi1b2mm7lq" path="res://Scripts/jogador.gd" id="1_k5ljr"]
+[ext_resource type="FontFile" uid="uid://wcpod6ib24rh" path="res://Artwork/Fonts/Kenney Mini Square Mono.ttf" id="3_j1gus"]
+
+[sub_resource type="Animation" id="Animation_ivkba"]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_qa3s7"]
+resource_name = "Jump"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+
+[sub_resource type="Animation" id="Animation_k5ljr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_j1gus"]
+resource_name = "Run"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 10.9283),
+"update": 1,
+"values": [7, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5ljr"]
+_data = {
+&"Idle": SubResource("Animation_ivkba"),
+&"Jump": SubResource("Animation_qa3s7"),
+&"RESET": SubResource("Animation_k5ljr"),
+&"Run": SubResource("Animation_j1gus")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1gus"]
+size = Vector2(46, 83)
+
+[node name="Jogador" type="CharacterBody2D" groups=["Jogador"]]
+script = ExtResource("1_k5ljr")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-2, -24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ivkba")
+hframes = 7
+vframes = 7
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_k5ljr")
+}
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_j1gus")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -122)
+enabled = false
+limit_left = 5
+limit_top = 5
+limit_right = 1100
+
+[node name="Label" type="Label" parent="."]
+z_index = 35
+offset_left = -206.0
+offset_top = -89.0
+offset_right = 194.0
+offset_bottom = -66.0
+pivot_offset = Vector2(28, 13)
+theme_override_fonts/font = ExtResource("3_j1gus")
+text = "asddsadas"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
