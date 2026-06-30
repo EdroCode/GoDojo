@@ -97,7 +97,7 @@ Ao longo do projeto existem vários componentes que os ninjas podem usar no seu 
 | <img width="48" height="48" alt="spring" src="https://github.com/user-attachments/assets/aaf35436-bf11-45bc-b9d9-85ebf5e6cc2e" /> | **Mola** | Impulsiona o jogador com uma força definida. |
 | <img width="48" height="48" alt="terrain_grass_cloud" src="https://github.com/user-attachments/assets/8abc5ab6-0697-421b-8f5e-9734871d6fe1" /> | **Plataforma** | Plataforma móvel que se desloca na horizontal ou vertical, durante X segundos, a uma velocidade definida. |
 | <img width="48" height="48" alt="weight" src="https://github.com/user-attachments/assets/6d779b72-fc99-4457-9a0c-0bbe202e921c" /> | **Peso** | Cai após X segundos. "Mata" o jogador se o acertar por baixo. |
-
+| <img width="64" height="64" alt="torch_on_a" src="https://github.com/user-attachments/assets/945851b6-bdf9-4765-b57f-a50dfe1ea636" />| **Tocha** | Uma tocha animada |
 
 ## Soluções de Referência
 
