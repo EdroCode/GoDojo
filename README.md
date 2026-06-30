@@ -83,6 +83,22 @@ await jogador.saltar_direita(0.6)
 await jogador.dizer("Consegui!", 3.0)
 ```
 
+## Componentes
+
+Ao longo do projeto existem vários componentes que os ninjas podem usar no seu nível custom:
+
+| | Componente | Descrição |
+|---|---|---|
+| <img width="48" height="48" alt="flag_yellow_a" src="https://github.com/user-attachments/assets/11955773-9b89-4b9b-a414-a8fdb67a68ad" /> | **Bandeira** | O objetivo do nível é apanhar a bandeira. |
+| <img width="48" height="48" alt="key_yellow" src="https://github.com/user-attachments/assets/09285bae-4c92-4e6b-b662-26e6d9aa9a9c" /> | **Chave** | Existe em 4 cores. Cada cor está ligada ao cofre da mesma cor - ao ser apanhada, abre o(s) cofre(s) correspondente(s). |
+| <img width="48" height="48" alt="lock_yellow" src="https://github.com/user-attachments/assets/fbb5acaf-0487-47fa-8f00-6bfc5dfa1f9f" /> | **Cofre** | Barreira que pode ser aberta ao apanhar a chave da cor correspondente. |
+| <img width="48" height="48" alt="saw" src="https://github.com/user-attachments/assets/dcc5b87d-60af-4650-84c4-0b30710e0c84" /> | **Serra** | "Mata" o jogador ao ser tocada. Bloqueia caminhos, tornando os níveis mais difíceis. |
+| <img width="48" height="48" alt="spikes" src="https://github.com/user-attachments/assets/c49f79b0-599e-421a-be0c-e8a9171366d8" /> | **Spikes** | Igual à serra, mas mais versátil - pode ser colocado em paredes, solos, tetos, etc. |
+| <img width="48" height="48" alt="spring" src="https://github.com/user-attachments/assets/aaf35436-bf11-45bc-b9d9-85ebf5e6cc2e" /> | **Mola** | Impulsiona o jogador com uma força definida. |
+| <img width="48" height="48" alt="terrain_grass_cloud" src="https://github.com/user-attachments/assets/8abc5ab6-0697-421b-8f5e-9734871d6fe1" /> | **Plataforma** | Plataforma móvel que se desloca na horizontal ou vertical, durante X segundos, a uma velocidade definida. |
+| <img width="48" height="48" alt="weight" src="https://github.com/user-attachments/assets/6d779b72-fc99-4457-9a0c-0bbe202e921c" /> | **Peso** | Cai após X segundos. "Mata" o jogador se o acertar por baixo. |
+
+
 ## Soluções de Referência
 
 > Estas são soluções possíveis para cada nível, incluídas como referência - há várias formas corretas de completar cada um.
